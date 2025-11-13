@@ -1,2 +1,19 @@
 [Ss]ave0.json
 [Ss]ave.json
+*.json
+
+
+# Ignore temporary or cache files
+*.tmp
+*.bak
+*.log
+*.cache
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore backups or autosaves
+Autosave*/
+Backup*/
