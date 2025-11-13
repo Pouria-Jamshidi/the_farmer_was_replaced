@@ -1,6 +1,6 @@
 # The_Farmer_Was_Replaced 
 
-the farmer was replaced is a program/game in steam the operates in an original language similar to Python to operate agricultural drones and automate farms. Playing this game will improve problem-solving skills and coding abilities through programming.
+[The Farmer Was Replaced](https://store.steampowered.com/app/2060160/The_Farmer_Was_Replaced/) is a program/game in steam the operates in an original language similar to Python to operate agricultural drones and automate farms. Playing this game will improve problem-solving skills and coding abilities through programming.
 
 ## my scripts in this respitory
 
@@ -17,11 +17,11 @@ the farmer was replaced is a program/game in steam the operates in an original l
         - currently only contains bobble sort and cocktail shake sort based algorithms.
     - maze.py just starts a maze so far. i have yet to structure any methods needed for solving the maze.
     - debugging.py is nothing important. It's sole purpose is for me to type and try the codes i wrote in game or get print or quick_print with it
-    
+
 ## How to Use
 
 1. Browse the repository online on GitHub or clone/download it.
-2. you can just directly copy the .py files and paste them in your game save files where your .py files exist.
+2. you can just directly copy the .py files and paste them in your game save files where your .py files exist. this respitory containts the files in my Save0 game folder so replacing or pasting them in your own game should not be complicated.
 
 
 
