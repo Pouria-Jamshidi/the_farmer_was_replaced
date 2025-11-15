@@ -11,8 +11,8 @@ def fullHarvest():
 			
 
 #function needed for watering
-def watering():
-	if get_water()<=0.5:
+def watering(amount=0.5):
+	if get_water()<=amount:
 		use_item(Items.Water)
 		
 #getting the ground ready after expansion

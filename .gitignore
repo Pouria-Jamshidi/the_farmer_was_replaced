@@ -1,7 +1,10 @@
+# Ignore save files
 [Ss]ave0.json
 [Ss]ave.json
 *.json
 
+# Ignore unncessery game files
+debugging.py
 
 # Ignore temporary or cache files
 *.tmp
