@@ -138,7 +138,7 @@ def sortCactus_cocktail_singleDrone():
 		move(East)
 
 
-# sorts the cactus in farm using cocktail shake sort algorithm improved in a way it checks with cactus behind it as well (still under maintenance)
+# sorts the cactus in farm using cocktail shake sort algorithm improved in a way it checks with cactus behind it as well
 def sortCactus_improvedCocktail_singleDrone():
 	# moving to the (0,0) coordinates
 	goTo()
