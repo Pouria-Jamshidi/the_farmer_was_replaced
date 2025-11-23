@@ -4,8 +4,8 @@
 
 ## my scripts in this respitory
 
-- this is not the most expert or tick efficent structure in game, simply my corrent state in game 
-	- i have yet to finish this game so you might not find all the files you desire in this respitory , it is still being updated as i progress more and more in game and optimize my codes and add new codes to te respitory
+- this is not the most expert or tick efficent structure in game, simply my current state in game 
+	- i have yet to finish this game so you might not find all the files you desire in this respitory , it is still being updated as i progress more and more in game and optimize my codes and add new codes to the respitory
     - i have yet to unlock more drones so currently all the codes here are made for a single drone only.
 
 - short description of current .py files:
