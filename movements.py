@@ -13,6 +13,8 @@ def goTo(x=0,y=0):
 		else:
 			move(North)
 			
+def current_pos():
+	return {'x':get_pos_x(),'y':get_pos_y()}
 
 #test or run codes here:
 if __name__=='__main__':
