@@ -4,7 +4,7 @@ limit = get_world_size()
 
 
 def fullCactus():
-	'''Fills the map with cactus'''
+	# '''Fills the map with cactus'''
 	for i in range(limit):
 		for j in range(limit):
 			if get_ground_type() == Grounds.Grassland:
@@ -15,7 +15,7 @@ def fullCactus():
 
 
 def cactusMatrix():
-	'''Give a matrix of current cactus status in the field'''
+	# '''Give a matrix of current cactus status in the field'''
 	goTo()
 	cactusList = []
 	for i in range(limit):
@@ -29,10 +29,10 @@ def cactusMatrix():
 
 
 def sortCactus_bobble_singleDrone():
-	'''
-	Sorts the cactus in the farm useing the bobble sort algorithm\n
-	Take care this method is for single drone use only
-	'''
+	# '''
+	# Sorts the cactus in the farm useing the bobble sort algorithm\n
+	# Take care this method is for single drone use only
+	# '''
 	# sorting the rows
 	goTo()
 
@@ -70,10 +70,10 @@ def sortCactus_bobble_singleDrone():
 
 
 def sortCactus_cocktail_singleDrone():
-	'''
-	Sorts the cactus in the field using coctail shake sorting algorithm\n
-	Take care this method is for single drone use only
-	'''
+	# '''
+	# Sorts the cactus in the field using coctail shake sorting algorithm\n
+	# Take care this method is for single drone use only
+	# '''
 	# moving to the (0,0) coordinates
 	goTo()
 	# sorting the rows
@@ -145,11 +145,11 @@ def sortCactus_cocktail_singleDrone():
 
 
 def sortCactus_improvedCocktail_singleDrone():
-	'''
-	Sorts the cactus in farm using cocktail shake sort algorithm\n
-	Improved in a way it checks with cactus behind it as well\n
-	Take care this algorithm is for single drone use only
-	'''
+	# '''
+	# Sorts the cactus in farm using cocktail shake sort algorithm\n
+	# Improved in a way it checks with cactus behind it as well\n
+	# Take care this algorithm is for single drone use only
+	# '''
 	# moving to the (0,0) coordinates
 	goTo()
 	# sorting the rows

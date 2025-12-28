@@ -1,22 +1,44 @@
 
-#full harvest before reset
-def fullHarvest():
-	for i in range (get_world_size()):
-		for j in range (get_world_size()):
-			harvest()
-			if get_ground_type()==Grounds.Soil:
-				till()
-			move(North)
-		move(East)
-			
+#full harvest before reset(1=Grassland,2=Soil,Empty=No change)
+def fullHarvest(groundChange=0):
+	# """
+	# full harvest before reset
+
+	# :param int groundChange: decides the state of ground after harvest.
+	# 0 or empty for no change
+	# 1 for grassland
+	# 2 for soil
+	# """
+	groundList=['',Grounds.Grassland,Grounds.Soil]
+	neededGround=groundList[groundChange]
+	if groundChange>=0 and groundChange<=2:
+		for i in range (get_world_size()):
+			for j in range (get_world_size()):
+				harvest()
+				if groundChange:
+					if get_ground_type()!=neededGround:
+						till()
+				move(North)
+			move(East)
+	else:
+		print('value should be between 0 to 2')
 
 #function needed for watering
 def watering(amount=0.5):
+	# """
+	# a function needed for watering, the defult value is 0.5 water level
+	
+	# :param amount: wetness of soil
+	# """
+
 	if get_water()<=amount:
 		use_item(Items.Water)
 		
 #getting the ground ready after expansion
 def ggr():
+	# """
+	# getting the ground ready after expansion or loading the save
+	# """
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
 			if get_pos_x()<=5 and get_pos_y()<=5:
@@ -28,6 +50,9 @@ def ggr():
 		
 #Replanting after getting ground ready
 def replanting():
+	# """
+	# replanting the default layout after calling ggr() method
+	# """
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
 			if get_ground_type()==Grounds.Soil:
@@ -44,8 +69,22 @@ def replanting():
 					plant(Entities.Tree)
 			move(East)
 		move(South)
-#Auto harvest for pumpkin,tree,grass,carrot
-def startHarvesting():
+
+#Auto harvest for pumpkin,tree,grass,carrot (default=False, first input for water level and second 0/1 for fertilizer)
+def startHarvesting(toWater=0,toFertilize=0):
+	# '''
+	# Auto harvest for pumpkin,tree,grass,carrot 
+
+	# :param toWater: indicated the level of moisture in land.
+	# :param toFertilize: indicated whether or not to add fertilizer using 0 or 1.
+	# '''
+	#decided whether or not to water/fertilize
+	def additional_actions():
+		if toWater:
+			watering(toWater)
+		if toFertilize:
+			use_item(Items.Fertilizer)
+		
 	while True:
 			for i in range(get_world_size()):
 				if get_ground_type()==Grounds.Grassland:
@@ -56,7 +95,7 @@ def startHarvesting():
 						if can_harvest():
 							harvest()
 							plant(Entities.Tree)
-							watering()
+							additional_actions()
 				if get_ground_type()==Grounds.Soil:
 					if get_entity_type()==Entities.Dead_Pumpkin or get_entity_type()==None:
 						plant(Entities.Pumpkin)
@@ -64,16 +103,16 @@ def startHarvesting():
 						if can_harvest():
 							harvest()
 							plant(Entities.Pumpkin)
-							watering()
+							additional_actions()
 					elif get_entity_type()==Entities.Carrot:
 						if can_harvest():
 							harvest()
 							plant(Entities.Carrot)
-							watering()
+							additional_actions()
 					elif get_entity_type()==Entities.Sunflower:
 						if can_harvest():
 							harvest()
 							plant(Entities.Sunflower)
-							watering()
+							additional_actions()
 				move(North)
 			move(East)
